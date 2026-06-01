@@ -1,8 +1,8 @@
 module tbm;
 
   logic zero, two, negation;
-  logic [7:0] A;
-  logic [8:0] p_product;
+  logic signed [7:0] A;
+  logic signed [8:0] p_product;
 
   mux dut (.zero(zero), .negation(negation), .two(two), .p_product(p_product), .A(A));
 

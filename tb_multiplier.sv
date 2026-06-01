@@ -1,6 +1,6 @@
 module tb_multiplier;
-  logic [7:0] A, B;
-  logic [15:0] product;
+  logic signed [7:0] A, B;
+  logic signed [15:0] product;
 
   booth_multiplier dut (.A(A), .B(B), .product(product));
 

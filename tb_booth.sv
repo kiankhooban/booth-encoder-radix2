@@ -1,7 +1,7 @@
 module booth_tb;
   logic b_prev, b_curr, b_next;
-  logic [7:0] A;
-  logic [8:0] p_product;
+  logic signed [7:0] A;
+  logic signed [8:0] p_product;
 
   booth_unit dut (.b_prev(b_prev), .b_curr(b_curr), .b_next(b_next), .A(A), .p_product(p_product));
 
