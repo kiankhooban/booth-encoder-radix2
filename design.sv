@@ -69,6 +69,6 @@ module booth_multiplier(
   booth_unit u2 (.A(A), .b_prev(B[3]), .b_curr(B[4]), .b_next(B[5]), .p_product(pp2));
   booth_unit u3 (.A(A), .b_prev(B[5]), .b_curr(B[6]), .b_next(B[7]), .p_product(pp3));
 
-  assign product = pp0 + pp1 + pp2 + pp3;
+  assign product = pp0 + {pp1, 2'b0} + {pp2, 4'b0} + {pp3, 6'b0};
 
 endmodule
