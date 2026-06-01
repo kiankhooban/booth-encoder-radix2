@@ -56,3 +56,19 @@ module booth_unit(
            .A(A), .p_product(p_product));
 
 endmodule
+
+
+module booth_multiplier(
+    input  logic [7:0] A, B,
+    output logic [15:0] product
+);
+    logic [8:0] pp0, pp1, pp2, pp3;
+
+  booth_unit u0 (.A(A), .b_prev(1'b0), .b_curr(B[0]), .b_next(B[1]), .p_product(pp0));
+  booth_unit u1 (.A(A), .b_prev(B[1]), .b_curr(B[2]), .b_next(B[3]), .p_product(pp1));
+  booth_unit u2 (.A(A), .b_prev(B[3]), .b_curr(B[4]), .b_next(B[5]), .p_product(pp2));
+  booth_unit u3 (.A(A), .b_prev(B[5]), .b_curr(B[6]), .b_next(B[7]), .p_product(pp3));
+
+  assign product = pp0 + pp1 + pp2 + pp3;
+
+endmodule
