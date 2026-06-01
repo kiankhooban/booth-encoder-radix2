@@ -102,9 +102,3 @@ gtkwave dump.vcd
 Modified Booth encoding (Radix-2) was introduced by Andrew D. Booth in 1951. It is a foundational technique in digital arithmetic — virtually every modern CPU multiplier uses some variant of this algorithm to reduce the partial product count and minimize power consumption and area.
 
 This implementation covers the **partial product generation unit** (one booth cell). A full multiplier would instantiate multiple `booth_unit`s, accumulate the partial products using a Wallace tree or carry-save adder array, and produce the final product.
-
----
-
-## Author
-
-Kian Khooban — York University, Lassonde School of Engineering
